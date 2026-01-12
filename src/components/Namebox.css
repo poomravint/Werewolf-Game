@@ -1,0 +1,65 @@
+.Input-box input {
+  height: 25px; /* ความสูง */
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.Input-box input:focus {
+  border-color: rgb(140, 211, 178);
+}
+
+.Input-box button {
+  height: 25px; /* ความสูง */
+  border-radius: 12px;
+  border: none;
+  background-color: rgb(140, 211, 178);
+  color: white;
+  cursor: pointer;
+}
+
+ul {
+  width: 200px;
+  padding: 4;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+li {
+  margin-right: 40px;
+  color: rgb(63, 23, 23);
+  font-size: 20px;
+}
+
+.member-item {
+  display: flex;
+  justify-content: space-between; /* แยกซ้าย-ขวา */
+  align-items: center;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  background: #f6f6f6;
+  border-radius: 6px;
+}
+
+.Input-box button:hover {
+  opacity: 0.85;
+}
+
+.member-item span {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.member-item button {
+  font-size: 14px;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: crimson;
+  color: white;
+  cursor: pointer;
+}
+
+.member-item button:hover {
+  opacity: 0.85;
+}
