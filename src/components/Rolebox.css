@@ -1,0 +1,17 @@
+.Select-box {
+  height: 25px; /* ความสูง */
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.Select-box:focus {
+  border-color: rgb(140, 211, 178);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(140, 211, 178, 0.3);
+}
+
+.Select-box:hover {
+  border-color: rgb(140, 211, 178);
+}

@@ -1,3 +1,5 @@
+
+
 .Input-box input {
   height: 25px; /* ความสูง */
   border-radius: 10px;
@@ -17,6 +19,10 @@
   color: white;
   cursor: pointer;
   font-weight: bold;
+}
+
+.Input-box button:hover {
+  opacity: 0.85;
 }
 
 ul {
@@ -45,9 +51,7 @@ li {
   
 }
 
-.Input-box button:hover {
-  opacity: 0.85;
-}
+
 
 .member-item span {
   font-size: 16px;
@@ -67,6 +71,8 @@ li {
 .member-item button:hover {
   opacity: 0.85;
 }
+
+
 
 /* animation ตอนลบ */
 .fade-out {
