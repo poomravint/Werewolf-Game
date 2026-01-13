@@ -3,6 +3,7 @@ import "./Namebox.css";
 
 const Namebox = ({ Groupname, setGroupName }) => {
   const [name, setName] = useState("");
+  const [deletingIndex, setdeletingIndex] = useState(null);
 
   const handleAddName = () => {
     if (name.trim() !== "") {
@@ -13,8 +14,14 @@ const Namebox = ({ Groupname, setGroupName }) => {
   };
 
   const handleDelete = (indextoDel) => {
-    const updateGroup = Groupname.filter((_, index) => index != indextoDel);
-    setGroupName(updateGroup);
+    setdeletingIndex(indextoDel);
+
+    setTimeout(() => {
+      const updateGroup = Groupname.filter((_, index) => index != indextoDel);
+      setGroupName(updateGroup);
+
+      setdeletingIndex(null);
+    }, 300);
   };
 
   return (
@@ -32,7 +39,12 @@ const Namebox = ({ Groupname, setGroupName }) => {
         <p>Member list : {Groupname.length}</p>
         <ul>
           {Groupname.map((member, index) => (
-            <li key={index} className="member-item">
+            <li
+              key={index}
+              className={`member-item ${
+                deletingIndex === index ? "fade-out" : ""
+              }`}
+            >
               <span style={{}}>{member}</span>
               <button onClick={() => handleDelete(index)}>Del</button>
             </li>

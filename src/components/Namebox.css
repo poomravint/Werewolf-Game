@@ -1,6 +1,6 @@
 .Input-box input {
   height: 25px; /* ความสูง */
-  border-radius: 12px;
+  border-radius: 10px;
   border: 1px solid #ccc;
   outline: none;
 }
@@ -11,11 +11,12 @@
 
 .Input-box button {
   height: 25px; /* ความสูง */
-  border-radius: 12px;
+  border-radius: 10px;
   border: none;
   background-color: rgb(140, 211, 178);
   color: white;
   cursor: pointer;
+  font-weight: bold;
 }
 
 ul {
@@ -39,6 +40,7 @@ li {
   margin-bottom: 8px;
   background: #f6f6f6;
   border-radius: 6px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .Input-box button:hover {
@@ -62,4 +64,10 @@ li {
 
 .member-item button:hover {
   opacity: 0.85;
+}
+
+/* animation ตอนลบ */
+.fade-out {
+  opacity: 0;
+  transform: translateX(30px);
 }
