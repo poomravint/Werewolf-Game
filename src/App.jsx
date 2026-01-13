@@ -11,8 +11,10 @@ function App() {
   return (
     <>
       <h1>Wherewolf Game</h1>
-      <Namebox Groupname={Groupname} setGroupName={setGroupName} />
-      <Rolebox Grouprole={Grouprole} setGroupRole={setGroupRole} />
+      <div className="Showbox">
+        <Namebox Groupname={Groupname} setGroupName={setGroupName} />
+        <Rolebox Grouprole={Grouprole} setGroupRole={setGroupRole} />
+      </div>
     </>
   );
 }

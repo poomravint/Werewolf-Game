@@ -1,4 +1,4 @@
-.Select-box {
+.select-box {
   height: 25px; /* ความสูง */
   border-radius: 10px;
   border: 1px solid #ccc;
@@ -6,12 +6,47 @@
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-.Select-box:focus {
+
+.select-box:focus {
   border-color: rgb(140, 211, 178);
   outline: none;
   box-shadow: 0 0 0 2px rgba(140, 211, 178, 0.3);
 }
 
-.Select-box:hover {
+.select-box:hover {
   border-color: rgb(140, 211, 178);
+  background-color: rgb(238, 238, 238);
+}
+
+.member-item {
+  display: flex;
+  justify-content: space-between; /* แยกซ้าย-ขวา */
+  align-items: center;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  background: #f6f6f6;
+  border-radius: 6px;
+  /* *Don't for get to add transition for fade out animation */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* animation ตอนลบ */
+.fade-out {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.role-bad {
+  background-color: #ffdddd;
+  border-left: 6px solid crimson;
+}
+
+.role-good {
+  background-color: #e6ffe6;
+  border-left: 6px solid green;
+}
+
+.role-special {
+  background-color: #fff8dc;
+  border-left: 6px solid goldenrod;
 }

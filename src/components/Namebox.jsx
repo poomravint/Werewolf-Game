@@ -9,7 +9,6 @@ const Namebox = ({ Groupname, setGroupName }) => {
     if (name.trim() !== "") {
       setGroupName([...Groupname, name]);
       setName("");
-      console.log(Groupname);
     }
   };
 
@@ -37,7 +36,9 @@ const Namebox = ({ Groupname, setGroupName }) => {
           <button onClick={handleAddName}>Add</button>
         </div>
         <div className="Member-table">
-          <p>Member list : <strong>{Groupname.length}</strong></p>
+          <p>
+            Member list : <strong>{Groupname.length}</strong>
+          </p>
           <ul>
             {Groupname.map((member, index) => (
               <li

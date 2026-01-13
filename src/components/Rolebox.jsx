@@ -1,22 +1,71 @@
 import { useState } from "react";
-import "./Rolebox.css"
+import "./Rolebox.css";
 
 const Rolebox = ({ Grouprole, setGroupRole }) => {
   const [role, setRole] = useState("");
-  const roleOptions = ["Villager", "Werewolf", "Seer"];
+  const [deletingIndex, setdeletingIndex] = useState(null);
+
+  const roleOptions = ["Villager", "Werewolf", "Seer", "Joker"];
+  const roleClassMap = {
+    Werewolf: "role-bad",
+    Villager: "role-good",
+    Seer: "role-good",
+    Joker: "role-special",
+  };
+
+  const handleAddRole = () => {
+    if (role.trim() !== "") {
+      setGroupRole([...Grouprole, role]);
+      setRole("");
+    }
+  };
+
+  const handleDelete = (indextoDel) => {
+    setdeletingIndex(indextoDel);
+    setTimeout(() => {
+      const updateGroup = Grouprole.filter((_, index) => index != indextoDel);
+      setGroupRole(updateGroup);
+      setdeletingIndex(null);
+    }, 300);
+  };
 
   return (
     <>
       <div className="Box-container">
-        <p>Role box</p>
-        <select className = "Select-box" value={role} onChange={(e) => setRole(e.target.value)}>
-          <option value="">-- Select Role --</option>
-          {roleOptions.map((r, index) => (
-            <option key={index} value={r}>
-              {r}
-            </option>
-          ))}
-        </select>
+        <div className="Input-box">
+          <select
+            className="select-box"
+            value={role}
+            onChange={(e) => setRole(e.target.value)}
+          >
+            <option value="">-- Select Role --</option>
+            {roleOptions.map((r, index) => (
+              <option key={index} value={r}>
+                {r}
+              </option>
+            ))}
+          </select>
+          <button onClick={handleAddRole}>Add</button>
+        </div>
+        <p>
+          Role list : <strong>{Grouprole.length}</strong>
+        </p>
+
+        <div className="RoleTable">
+          <ul>
+            {Grouprole.map((member, index) => (
+              <li
+                key={index}
+                className={`member-item ${roleClassMap[member]}${
+                  deletingIndex === index ? "fade-out" : ""
+                }`}
+              >
+                <span>{member}</span>
+                <button onClick={() => handleDelete(index)}>Del</button>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </>
   );
