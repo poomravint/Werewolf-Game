@@ -23,7 +23,7 @@ ul {
   width: 200px;
   padding: 4;
   margin: 0 auto;
-  font-family: Arial, Helvetica, sans-serif;
+
 }
 
 li {
@@ -40,7 +40,9 @@ li {
   margin-bottom: 8px;
   background: #f6f6f6;
   border-radius: 6px;
+  /* *Don't for get to add transition for fade out animation */
   transition: opacity 0.3s ease, transform 0.3s ease;
+  
 }
 
 .Input-box button:hover {

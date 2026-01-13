@@ -26,30 +26,32 @@ const Namebox = ({ Groupname, setGroupName }) => {
 
   return (
     <>
-      <div className="Input-box">
-        <input
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="Enter your name"
-        />
-        <button onClick={handleAddName}>Add</button>
-      </div>
-      <div className="Member-table">
-        <p>Member list : {Groupname.length}</p>
-        <ul>
-          {Groupname.map((member, index) => (
-            <li
-              key={index}
-              className={`member-item ${
-                deletingIndex === index ? "fade-out" : ""
-              }`}
-            >
-              <span style={{}}>{member}</span>
-              <button onClick={() => handleDelete(index)}>Del</button>
-            </li>
-          ))}
-        </ul>
+      <div className="Box-container">
+        <div className="Input-box">
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Enter your name"
+          />
+          <button onClick={handleAddName}>Add</button>
+        </div>
+        <div className="Member-table">
+          <p>Member list : <strong>{Groupname.length}</strong></p>
+          <ul>
+            {Groupname.map((member, index) => (
+              <li
+                key={index}
+                className={`member-item ${
+                  deletingIndex === index ? "fade-out" : ""
+                }`}
+              >
+                <span style={{}}>{member}</span>
+                <button onClick={() => handleDelete(index)}>Del</button>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </>
   );
