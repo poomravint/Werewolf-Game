@@ -1,17 +1,17 @@
 import { useState } from "react";
 import "./Rolebox.css";
+import { roleClassMap } from "./roleUtils";
 
 const Rolebox = ({ Grouprole, setGroupRole }) => {
   const [role, setRole] = useState("");
   const [deletingIndex, setdeletingIndex] = useState(null);
 
   const roleOptions = ["Villager", "Werewolf", "Seer", "Joker"];
-  const roleClassMap = {
-    Werewolf: "role-bad",
-    Villager: "role-good",
-    Seer: "role-good",
-    Joker: "role-special",
-  };
+
+  const rolecolor = (role) =>
+  {
+    return roleClassMap[role];
+  }
 
   const handleAddRole = () => {
     if (role.trim() !== "") {
@@ -56,7 +56,7 @@ const Rolebox = ({ Grouprole, setGroupRole }) => {
             {Grouprole.map((member, index) => (
               <li
                 key={index}
-                className={`member-item ${roleClassMap[member]}${
+                className={`member-item ${rolecolor(member)}${
                   deletingIndex === index ? "fade-out" : ""
                 }`}
               >

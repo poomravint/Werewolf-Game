@@ -1,27 +1,26 @@
 import "./Showmatching.css";
+import "./Rolebox.css";
+import { rolecolor } from "./roleUtils";
 
 const Card = ({ name, role, isOpen, onClick }) => {
+  const roleClassMap = {
+    Werewolf: "role-bad",
+    Villager: "role-good",
+    Seer: "role-good",
+    Joker: "role-special",
+  };
   return (
     <div className="card" onClick={onClick}>
-      <div className="card-inner" >
-        
+      <div className={`card-inner ${isOpen ? "flipped" : ""}`}>
+        <div className="card-front">
+          <h3>{name}</h3>
+          <p>Click to reveal</p>
+        </div>
 
-        {!isOpen && (
-          <div className="card-font">
-            <h3>{name}</h3>
-            <p>Click to reveal</p>
-          </div>
-        )}
-
-        {isOpen && (
-          <div className="card-back">
-            <h3>{role}</h3>
-            <h4>({name})</h4>
-            <p>Click to close</p>
-          </div>
-        )}
-
-
+        <div className={`card-back ${rolecolor(role)}`}>
+          <h3>{role}</h3>
+          <p>{name}</p>
+        </div>
       </div>
     </div>
   );
