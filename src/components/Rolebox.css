@@ -24,7 +24,6 @@
   align-items: center;
   padding: 8px 12px;
   margin-bottom: 8px;
-  background: #f6f6f6;
   border-radius: 6px;
   /* *Don't for get to add transition for fade out animation */
   transition: opacity 0.3s ease, transform 0.3s ease;

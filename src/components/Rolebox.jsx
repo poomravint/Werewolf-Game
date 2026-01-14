@@ -6,12 +6,32 @@ const Rolebox = ({ Grouprole, setGroupRole }) => {
   const [role, setRole] = useState("");
   const [deletingIndex, setdeletingIndex] = useState(null);
 
-  const roleOptions = ["Villager", "Werewolf", "Seer", "Joker"];
+  const roleOptions = [
+    "Villager",
+    "Werewolf",
+    "Seer",
+    "Joker",
+    "Detective",
+    "Gaurd",
+    "Hunter",
+    "Sheriff",
+    "Wolfcub",
+    "Cupid",
+    "Strongman",
+    "Silent",
+    "Priest",
+    "Nakron_guy",
+    "Serial_killer",
+    "Wolf_Hunter",
+    "Wolf_Witch",
+    "Wolf_Leader"
 
-  const rolecolor = (role) =>
-  {
+
+  ];
+
+  const rolecolor = (role) => {
     return roleClassMap[role];
-  }
+  };
 
   const handleAddRole = () => {
     if (role.trim() !== "") {
@@ -56,7 +76,7 @@ const Rolebox = ({ Grouprole, setGroupRole }) => {
             {Grouprole.map((member, index) => (
               <li
                 key={index}
-                className={`member-item ${rolecolor(member)}${
+                className={`member-item ${rolecolor(member)} ${
                   deletingIndex === index ? "fade-out" : ""
                 }`}
               >
