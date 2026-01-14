@@ -5,6 +5,7 @@ import "./App.css";
 import Namebox from "./components/Namebox.jsx";
 import Rolebox from "./components/Rolebox.jsx";
 import MatchingRandom from "./components/MatchingRandom.jsx";
+import Showmatching from "./components/Showmatching.jsx";
 
 function App() {
   const [Groupname, setGroupName] = useState([]);
@@ -22,6 +23,9 @@ function App() {
         GroupRole={Grouprole}
         setResult={setResult}
       />
+      <div>
+        <Showmatching Result={Result}/>
+      </div>
     </>
   );
 }
