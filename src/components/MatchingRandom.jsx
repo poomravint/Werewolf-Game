@@ -18,7 +18,20 @@ const MatchingRandom = ({ Groupname, GroupRole, setResult }) => {
 
   return (
     <>
-      <button onClick={handlematching}>Random</button>
+      <button
+        onClick={handlematching}
+        style={{
+          backgroundColor: "#6374d4 ",
+          color: "white",
+          border: "none",
+          borderRadius: "12px",
+          padding: "8px 16px",
+          cursor: "pointer",
+          fontWeight: "bold",
+        }}
+      >
+        Random
+      </button>
     </>
   );
 };
