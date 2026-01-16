@@ -3,12 +3,6 @@ import "./Rolebox.css";
 import { rolecolor } from "./roleUtils";
 
 const Card = ({ name, role, isOpen, onClick }) => {
-  const roleClassMap = {
-    Werewolf: "role-bad",
-    Villager: "role-good",
-    Seer: "role-good",
-    Joker: "role-special",
-  };
   return (
     <div className="card" onClick={onClick}>
       <div className={`card-inner ${isOpen ? "flipped" : ""}`}>

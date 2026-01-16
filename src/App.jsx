@@ -6,6 +6,7 @@ import Namebox from "./components/Namebox.jsx";
 import Rolebox from "./components/Rolebox.jsx";
 import MatchingRandom from "./components/MatchingRandom.jsx";
 import Showmatching from "./components/Showmatching.jsx";
+import Dmbox from "./components/Dmbox.jsx";
 
 function App() {
   const [Groupname, setGroupName] = useState([]);
@@ -24,7 +25,10 @@ function App() {
         setResult={setResult}
       />
       <div>
-        <Showmatching Result={Result}/>
+        <Showmatching Result={Result} />
+      </div>
+      <div>
+        <Dmbox result={Result} />
       </div>
     </>
   );
