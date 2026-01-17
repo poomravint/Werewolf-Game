@@ -1,6 +1,6 @@
 import "./Showmatching.css";
 import "./Rolebox.css";
-import { rolecolor } from "./roleUtils";
+import { getRoleClass } from "./roleUtils";
 
 const Card = ({ name, role, isOpen, onClick }) => {
   return (
@@ -11,7 +11,7 @@ const Card = ({ name, role, isOpen, onClick }) => {
           <p>Click to reveal</p>
         </div>
 
-        <div className={`card-back ${rolecolor(role)}`}>
+        <div className={`card-back ${getRoleClass(role)}`}>
           <h3>{role}</h3>
           <p>{name}</p>
         </div>

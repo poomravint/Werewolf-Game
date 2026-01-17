@@ -1,6 +1,6 @@
 import { use, useState } from "react";
 import "./Dmbox.css";
-import { rolecolor } from "./roleUtils";
+import { getRoleClass } from "./roleUtils";
 
 const Dmbox = ({ result }) => {
   const [buttonStatus, setButtonStatus] = useState(false);
@@ -76,7 +76,7 @@ const Dmbox = ({ result }) => {
                   className={status[index]?.dead ? "row-dead" : ""}
                   key={index}
                 >
-                  <td className={`${rolecolor(player.role)}`}>
+                  <td className={`${getRoleClass(player.role)}`}>
                     {player.name}
 
                     {status[index]?.dead && (
