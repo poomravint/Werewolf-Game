@@ -1,7 +1,7 @@
 import "./RolePopup.css";
-import { rolecolor } from "./roleUtils";
-import { roleClassMap } from "./roleUtils";
-import { roleAbility } from "./roleUtils";
+import { roles } from "./roleUtils";
+import { getRoleClass } from "./roleUtils";
+import { getRoleAbility } from "./roleUtils";
 
 const RolePopup = ({ onClose }) => {
   return (
@@ -17,11 +17,11 @@ const RolePopup = ({ onClose }) => {
             </tr>
           </thead>
           <tbody>
-            {Object.keys(roleClassMap).map((role) => (
+            {Object.keys(roles).map((role) => (
               <tr key={role}>
           
-                <td className={`${rolecolor(role)}`}><strong>{role}</strong></td>
-                <td className={`ability-cell ${rolecolor(role)}`}>{roleAbility(role)}</td>
+                <td className={`${getRoleClass(role)}`}><strong>{role}</strong></td>
+                <td className={`ability-cell ${getRoleClass(role)}`}>{getRoleAbility(role)}</td>
               </tr>
             ))}
           </tbody>
