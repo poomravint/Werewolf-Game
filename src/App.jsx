@@ -2,6 +2,7 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import Topicbar from "./components/Topicbar.jsx";
 import Namebox from "./components/Namebox.jsx";
 import Rolebox from "./components/Rolebox.jsx";
 import MatchingRandom from "./components/MatchingRandom.jsx";
@@ -14,7 +15,7 @@ function App() {
   const [Result, setResult] = useState([]);
   return (
     <>
-      <h1>Wherewolf Game</h1>
+      <Topicbar/>
       <div className="Showbox">
         <Namebox Groupname={Groupname} setGroupName={setGroupName} />
         <Rolebox Grouprole={Grouprole} setGroupRole={setGroupRole} />

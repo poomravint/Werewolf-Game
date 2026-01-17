@@ -1,0 +1,74 @@
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: rgb(240, 237, 237);
+  padding: 24px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+
+  max-height: 80vh; /* 🔥 สำคัญ */
+  overflow-y: auto; /* 🔥 เปิด scroll */
+
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.close-button {
+  margin-top: 16px;
+  padding: 8px 16px;
+  border: none;
+  background: #e74c3c;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.role-Table {
+  width: 100%;
+  table-layout: fixed; /* 🔥 บังคับ column */
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.ability-cell {
+  padding: 12px 18px;
+  word-break: break-word; /* 🔥 ตัดคำ */
+  white-space: normal; /* 🔥 อนุญาตขึ้นบรรทัดใหม่ */
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: left; /* อ่านง่าย */
+  vertical-align: middle; /* กลางแนวตั้ง */
+  border-left: 1px solid #9b9797 !important;
+  white-space: pre-line; /* 🔥 เจอ\n ขึ้นบรรทัดใหม่ */ 
+}
+
+tr {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.role-Table tbody tr {
+  border-bottom: 1px solid #9b9797;
+}
+
+.role-Table th:first-child,
+.role-Table td:first-child {
+  width: 30%;
+}
+
+.role-Table th:last-child,
+.role-Table td:last-child {
+  width: 70%;
+}
