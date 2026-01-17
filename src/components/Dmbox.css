@@ -30,9 +30,7 @@
   padding: 10px;
   text-align: center;
   border-top: 1px solid #eee;
-  
 }
-
 
 .dm-table tbody tr:hover {
   background-color: #f5f7fa;
@@ -44,15 +42,23 @@
   cursor: pointer;
 }
 
+.button-bar {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  height: 40px;
+}
+
 .show-button {
-  margin-top: 16px;
+  position: absolute;
+  left: 42%;
   background: #324de6;
   color: white;
   border: none;
   padding: 8px 16px;
   border-radius: 8px;
   cursor: pointer;
-  margin-right: 8px;
   font-weight: bold;
 }
 
@@ -61,6 +67,20 @@
 }
 
 .reset-button {
+  position: absolute;
+  right: 8%;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.resetStatus-button {
+  position: absolute;
+  left: 0;
   background: #e74c3c;
   color: white;
   border: none;
@@ -86,4 +106,3 @@
 .name-tag {
   border-left: 6px solid goldenrod;
 }
-

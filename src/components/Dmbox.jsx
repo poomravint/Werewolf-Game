@@ -18,21 +18,43 @@ const Dmbox = ({ result }) => {
         [key]: !prev[index]?.[key],
       },
     }));
-    console.log(status);
+    // console.log(status);
   };
 
-  const resetStatus = () => {
+  const resetAll = () => {
     setStatus({});
+  };
+
+  const resetStatus = () => 
+  {
+    setStatus((prev) => {
+      const newStatus = {};
+
+      Object.keys(prev).forEach((index) => {
+      newStatus[index] = {
+        ...prev[index],
+        target: false,
+        silenced: false,
+        protected: false,
+      };
+    });
+
+    return newStatus;
+    })
   };
 
   return (
     <>
-      <button className="show-button" onClick={toggleButtonStatus}>
-        {buttonStatus === false ? "Hide Role" : "Show Role"}
-      </button>
-      <button className="reset-button" onClick={resetStatus}>
-        Reset Status
-      </button>
+      <div className="button-bar">
+        <button className="resetStatus-button" onClick={resetStatus}>Reset Status</button>
+        <button className="show-button" onClick={toggleButtonStatus}>
+          {buttonStatus === false ? "Hide Role" : "Show Role"}
+        </button>
+        <button className="reset-button" onClick={resetAll}>
+          All Reset
+        </button>
+      </div>
+
       <div className="dm-box">
         {buttonStatus && (
           <table className="dm-table">
