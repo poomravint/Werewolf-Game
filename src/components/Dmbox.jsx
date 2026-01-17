@@ -50,9 +50,7 @@ const Dmbox = ({ result }) => {
         <button className="show-button" onClick={toggleButtonStatus}>
           {buttonStatus === false ? "Hide Role" : "Show Role"}
         </button>
-        <button className="reset-button" onClick={resetAll}>
-          All Reset
-        </button>
+        
       </div>
 
       <div className="dm-box">
@@ -76,7 +74,7 @@ const Dmbox = ({ result }) => {
                   className={status[index]?.dead ? "row-dead" : ""}
                   key={index}
                 >
-                  <td className={`${getRoleClass(player.role)}`}>
+                  <td className={`col-name ${getRoleClass(player.role)}`}>
                     {player.name}
 
                     {status[index]?.dead && (
@@ -86,7 +84,7 @@ const Dmbox = ({ result }) => {
                       <span className="status-icon target">🎯</span>
                     )}
                     {status[index]?.silenced && (
-                      <span className="status-icon silenced">🤫</span>
+                      <span className="status-icon silenced">🔇</span>
                     )}
                     {status[index]?.protected && (
                       <span className="status-icon protected">🛡️</span>
@@ -95,8 +93,9 @@ const Dmbox = ({ result }) => {
                       <span className="status-icon lover">❤️</span>
                     )}
                   </td>
-                  <td>{player.role}</td>
-                  <td>
+                  <td className="col-role">{player.role}</td>
+                  <td className="col-flag">
+                    ☠️
                     <input
                       className="dm-checkbox"
                       type="checkbox"
@@ -104,7 +103,8 @@ const Dmbox = ({ result }) => {
                       onChange={() => toggleStatus(index, "dead")}
                     />
                   </td>
-                  <td>
+                  <td className="col-flag">
+                    🎯
                     <input
                       className="dm-checkbox"
                       type="checkbox"
@@ -112,7 +112,8 @@ const Dmbox = ({ result }) => {
                       onChange={() => toggleStatus(index, "target")}
                     />
                   </td>
-                  <td>
+                  <td className="col-flag">
+                    🔇
                     <input
                       className="dm-checkbox"
                       type="checkbox"
@@ -120,7 +121,8 @@ const Dmbox = ({ result }) => {
                       onChange={() => toggleStatus(index, "silenced")}
                     />
                   </td>
-                  <td>
+                  <td className="col-flag">
+                    🛡️
                     <input
                       className="dm-checkbox"
                       type="checkbox"
@@ -128,7 +130,8 @@ const Dmbox = ({ result }) => {
                       onChange={() => toggleStatus(index, "protected")}
                     />
                   </td>
-                  <td>
+                  <td className="col-flag">
+                    ❤️
                     <input
                       className="dm-checkbox"
                       type="checkbox"
@@ -141,7 +144,11 @@ const Dmbox = ({ result }) => {
             </tbody>
           </table>
         )}
+        
       </div>
+      <button className="reset-button" onClick={resetAll}>
+          All Reset
+        </button>
     </>
   );
 };
