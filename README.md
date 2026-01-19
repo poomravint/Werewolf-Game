@@ -6,5 +6,7 @@ Function
 - Random role
 - Manage status for each player
 
-Try to play : https://poomravint.github.io/Werewolf-Game/
-!This project support only on PC and Ipad (if you play this on mobile phone you need to play in horizontal)
+Try to play : <a href="https://poomravint.github.io/Werewolf-Game/">
+  <img src="https://cdn-icons-png.freepik.com/512/7063/7063801.png" alt="Wolf-icon" width="25">
+</a> <br>
+! This project support only on PC and Ipad (if you play this on mobile phone you need to play in horizontal)
