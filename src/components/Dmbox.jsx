@@ -2,12 +2,14 @@ import { use, useState } from "react";
 import "./Dmbox.css";
 import { getRoleClass } from "./roleUtils";
 
-const Dmbox = ({ result , showdmbutton}) => {
+const Dmbox = ({ result, showdmbutton }) => {
   const [buttonStatus, setButtonStatus] = useState(false);
+  const [buttonResetStatus, setButtonResetStatus] = useState(false);
   const [status, setStatus] = useState({});
 
   const toggleButtonStatus = () => {
     setButtonStatus(!buttonStatus);
+    setButtonResetStatus(!buttonResetStatus);
   };
 
   const toggleStatus = (index, key) => {
@@ -25,33 +27,38 @@ const Dmbox = ({ result , showdmbutton}) => {
     setStatus({});
   };
 
-  const resetStatus = () => 
-  {
+  const resetStatus = () => {
     setStatus((prev) => {
       const newStatus = {};
 
       Object.keys(prev).forEach((index) => {
-      newStatus[index] = {
-        ...prev[index],
-        target: false,
-        silenced: false,
-        protected: false,
-      };
-    });
+        newStatus[index] = {
+          ...prev[index],
+          target: false,
+          silenced: false,
+          protected: false,
+        };
+      });
 
-    return newStatus;
-    })
+      return newStatus;
+    });
   };
 
   return (
     <>
-      {showdmbutton && <div className="button-bar">
-        <button className="resetStatus-button" onClick={resetStatus}>Reset Status</button>
-        <button className="show-button" onClick={toggleButtonStatus}>
-          {buttonStatus === false ? "Hide Role" : "Show Role"}
-        </button>
-        
-      </div>}
+      {showdmbutton && (
+        <div className="button-bar">
+          {buttonResetStatus && (
+            <button className="resetStatus-button" onClick={resetStatus}>
+              Reset Status
+            </button>
+          )}
+
+          <button className="show-button" onClick={toggleButtonStatus}>
+            {buttonStatus === false ? "Hide Role" : "Show Role"}
+          </button>
+        </div>
+      )}
       <div className="dm-box">
         {buttonStatus && (
           <table className="dm-table">
@@ -143,11 +150,12 @@ const Dmbox = ({ result , showdmbutton}) => {
             </tbody>
           </table>
         )}
-        
       </div>
-      {showdmbutton && <button className="reset-button" onClick={resetAll}>
+      {buttonResetStatus && showdmbutton && (
+        <button className="reset-button" onClick={resetAll}>
           All Reset
-        </button>}
+        </button>
+      )}
     </>
   );
 };
