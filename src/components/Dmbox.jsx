@@ -2,7 +2,7 @@ import { use, useState } from "react";
 import "./Dmbox.css";
 import { getRoleClass } from "./roleUtils";
 
-const Dmbox = ({ result }) => {
+const Dmbox = ({ result , showdmbutton}) => {
   const [buttonStatus, setButtonStatus] = useState(false);
   const [status, setStatus] = useState({});
 
@@ -45,14 +45,13 @@ const Dmbox = ({ result }) => {
 
   return (
     <>
-      <div className="button-bar">
+      {showdmbutton && <div className="button-bar">
         <button className="resetStatus-button" onClick={resetStatus}>Reset Status</button>
         <button className="show-button" onClick={toggleButtonStatus}>
           {buttonStatus === false ? "Hide Role" : "Show Role"}
         </button>
         
-      </div>
-
+      </div>}
       <div className="dm-box">
         {buttonStatus && (
           <table className="dm-table">
@@ -146,9 +145,9 @@ const Dmbox = ({ result }) => {
         )}
         
       </div>
-      <button className="reset-button" onClick={resetAll}>
+      {showdmbutton && <button className="reset-button" onClick={resetAll}>
           All Reset
-        </button>
+        </button>}
     </>
   );
 };

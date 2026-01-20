@@ -13,6 +13,8 @@ function App() {
   const [Groupname, setGroupName] = useState([]);
   const [Grouprole, setGroupRole] = useState([]);
   const [Result, setResult] = useState([]);
+  const [showdmbutton, setShowdmbutton] = useState(false);
+
   return (
     <>
       <Topicbar/>
@@ -24,12 +26,13 @@ function App() {
         Groupname={Groupname}
         GroupRole={Grouprole}
         setResult={setResult}
+        setShowdmbutton={setShowdmbutton}
       />
       <div>
         <Showmatching Result={Result} />
       </div>
       <div>
-        <Dmbox result={Result} />
+        <Dmbox result={Result}  showdmbutton={showdmbutton}/>
       </div>
     </>
   );

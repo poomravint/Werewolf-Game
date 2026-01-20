@@ -1,9 +1,19 @@
 import { useState } from "react";
 
-const MatchingRandom = ({ Groupname, GroupRole, setResult }) => {
+const MatchingRandom = ({
+  Groupname,
+  GroupRole,
+  setResult,
+  setShowdmbutton,
+}) => {
   const shuffle = (array) => [...array].sort(() => Math.random() - 0.5);
 
   const handlematching = () => {
+    if (Groupname.length === 0 && GroupRole.length === 0) {
+      alert("Please add Member and Role");
+      return;
+    }
+
     if (Groupname.length !== GroupRole.length) {
       alert("Member and Role doesn't matching");
       return;
@@ -14,6 +24,7 @@ const MatchingRandom = ({ Groupname, GroupRole, setResult }) => {
       role: shuffledRoles[index],
     }));
     setResult(matched);
+    setShowdmbutton(true);
   };
 
   return (
