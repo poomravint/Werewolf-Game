@@ -50,7 +50,7 @@
 .button-bar {
   position: relative;   /* 🔥 สำคัญ */
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
   margin: 20px auto;
   height: 40px;
 }
@@ -58,7 +58,7 @@
 /* ปุ่มซ้าย */
 .resetStatus-button {
   position: absolute;
-  left: 0;
+  left: 20%;
 
   background: #e74c3c;
   color: white;
@@ -73,7 +73,7 @@
 .show-button {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%); /* 🔥 หัวใจของคำตอบ */
+  transform: translateX(-50%); 
 
   background: #324de6;
   color: white;
@@ -82,6 +82,22 @@
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
+}
+
+
+.sequence-button {
+  position: absolute;
+  left: 65%;
+  
+
+  background: #ee7f53;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  
 }
 
 .reset-button {

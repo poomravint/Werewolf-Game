@@ -1,11 +1,13 @@
 import { use, useState } from "react";
 import "./Dmbox.css";
 import { getRoleClass } from "./roleUtils";
+import SequencePopup from "./SequencePopup";
 
 const Dmbox = ({ result, showdmbutton }) => {
   const [buttonStatus, setButtonStatus] = useState(false);
   const [buttonResetStatus, setButtonResetStatus] = useState(false);
   const [status, setStatus] = useState({});
+  const [openpopup, setOpenPopup] = useState(false);
 
   const toggleButtonStatus = () => {
     setButtonStatus(!buttonStatus);
@@ -57,6 +59,12 @@ const Dmbox = ({ result, showdmbutton }) => {
           <button className="show-button" onClick={toggleButtonStatus}>
             {buttonStatus === false ? "Hide Role" : "Show Role"}
           </button>
+
+          {buttonResetStatus && (
+            <button className="sequence-button" onClick={() => setOpenPopup(true)}>
+              Role Sequence
+            </button>
+          )}
         </div>
       )}
       <div className="dm-box">
@@ -155,6 +163,9 @@ const Dmbox = ({ result, showdmbutton }) => {
         <button className="reset-button" onClick={resetAll}>
           All Reset
         </button>
+      )}
+      {openpopup && (
+        <SequencePopup onClose={() => setOpenPopup(false)} result={result} />
       )}
     </>
   );

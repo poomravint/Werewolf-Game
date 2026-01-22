@@ -24,7 +24,7 @@ const RolePopup = ({ onClose }) => {
                 <td className={`ability-cell ${getRoleClass(role)}`}>{getRoleAbility(role)}</td>
               </tr>
             ))}
-          </tbody>
+          </tbody>  
         </table>
         <button className="close-button" onClick={onClose}>
           Close

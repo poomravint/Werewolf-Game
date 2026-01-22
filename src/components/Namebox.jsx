@@ -23,11 +23,11 @@ const Namebox = ({ Groupname, setGroupName }) => {
     }, 300);
   };
 
-  useEffect(() => {
-    if (Groupname.length >= 10) {
-      alert("more than 10 players in this game");
-    }
-  }, [Groupname.length]); // เฝ้าดูแค่ "จำนวน" ผู้เล่น
+  // useEffect(() => {
+  //   if (Groupname.length >= 10) {
+  //     alert("more than 10 players in this game");
+  //   }
+  // }, [Groupname.length]); // เฝ้าดูแค่ "จำนวน" ผู้เล่น
 
   return (
     <>
