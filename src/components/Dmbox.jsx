@@ -1,7 +1,9 @@
 import { use, useState } from "react";
 import "./Dmbox.css";
 import { getRoleClass } from "./roleUtils";
+import { getThaiName } from "./roleUtils";
 import SequencePopup from "./SequencePopup";
+
 
 const Dmbox = ({ result, showdmbutton }) => {
   const [buttonStatus, setButtonStatus] = useState(false);
@@ -107,7 +109,7 @@ const Dmbox = ({ result, showdmbutton }) => {
                       <span className="status-icon lover">❤️</span>
                     )}
                   </td>
-                  <td className="col-role">{player.role}</td>
+                  <td className="col-role">{player.role}<br/>({getThaiName(player.role)})</td>
                   <td className="col-flag">
                     ☠️
                     <input

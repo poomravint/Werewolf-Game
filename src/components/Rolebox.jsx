@@ -1,35 +1,14 @@
 import { useState } from "react";
 import "./Rolebox.css";
-
+import { roles } from "./roleUtils"
 import { getRoleClass } from "./roleUtils";
 
 const Rolebox = ({ Grouprole, setGroupRole }) => {
   const [role, setRole] = useState("");
   const [deletingIndex, setdeletingIndex] = useState(null);
 
-  const roleOptions = [
-    "Villager",
-    "Werewolf",
-    "Seer",
-    "Joker",
-    "Detective",
-    "Gaurd",
-    "Hunter",
-    "Sheriff",
-    "Wolfcub",
-    "Cupid",
-    "Strongman",
-    "Silent",
-    "Priest",
-    "Nakron_guy",
-    "Serial_killer",
-    "Wolf_Hunter",
-    "Wolf_Witch",
-    "Wolf_Leader"
-
-
-  ];
-
+  //* Fetch all role from Roles
+const roleOptions = Object.keys(roles)
 
 
   const handleAddRole = () => {

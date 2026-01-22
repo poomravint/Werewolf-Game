@@ -3,6 +3,7 @@ import "./RolePopup.css";
 import { ROLE_SEQUENCE } from "./roleUtils";
 import { getRoleClass } from "./roleUtils";
 import { getRoleAbility } from "./roleUtils";
+import { getThaiName } from "./roleUtils";
 
 const SequencePopup = ({ onClose, result }) => {
   console.log(result);
@@ -27,7 +28,7 @@ const SequencePopup = ({ onClose, result }) => {
           <tbody>
             {sequenceToShow.map((item, index) => (
               <tr key={index}>
-                <td className={`${getRoleClass(item.role)}`}><strong>{item.role}</strong></td>
+                <td className={`${getRoleClass(item.role)}`}><strong>{item.role}</strong><br />({getThaiName(item.role)})</td>
                 <td className={`ability-cell ${getRoleClass(item.role)}`}>{item.ability}</td>
               </tr>
             ))}

@@ -2,6 +2,9 @@ import "./RolePopup.css";
 import { roles } from "./roleUtils";
 import { getRoleClass } from "./roleUtils";
 import { getRoleAbility } from "./roleUtils";
+import { getThaiName } from "./roleUtils";
+
+
 
 const RolePopup = ({ onClose }) => {
   return (
@@ -20,7 +23,7 @@ const RolePopup = ({ onClose }) => {
             {Object.keys(roles).map((role) => (
               <tr key={role}>
           
-                <td className={`${getRoleClass(role)}`}><strong>{role}</strong></td>
+                <td className={`${getRoleClass(role)}`}><strong>{role}</strong><br />({getThaiName(role)})</td>
                 <td className={`ability-cell ${getRoleClass(role)}`}>{getRoleAbility(role)}</td>
               </tr>
             ))}
