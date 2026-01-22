@@ -6,7 +6,7 @@ import { getRoleAbility } from "./roleUtils";
 import { getThaiName } from "./roleUtils";
 
 const SequencePopup = ({ onClose, result }) => {
-  console.log(result);
+  // console.log(result);
   //* Map only role from result(in result has name and role)
   const rolesInGame = result.map((player) => player.role);
   //* Sorted by Sequence
