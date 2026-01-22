@@ -95,7 +95,7 @@ const Dmbox = ({ result, showdmbutton }) => {
                       <span className="status-icon dead">☠️</span>
                     )}
                     {status[index]?.target && (
-                      <span className="status-icon target">🎯</span>
+                      <span className="status-icon target">🩸</span>
                     )}
                     {status[index]?.silenced && (
                       <span className="status-icon silenced">🔇</span>
@@ -118,7 +118,7 @@ const Dmbox = ({ result, showdmbutton }) => {
                     />
                   </td>
                   <td className="col-flag">
-                    🎯
+                    🩸
                     <input
                       className="dm-checkbox"
                       type="checkbox"
