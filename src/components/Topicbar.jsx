@@ -17,7 +17,7 @@ const Topicbar = () => {
           onClick={() => setOpen(true)}
         />
       </div>
-
+      <p className="dev-name">Developed by Ravint Wongwaro</p>
       {open && <RolePopup onClose={() => setOpen(false)} />}
     </>
   );
