@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Rolebox.css";
-import { roles } from "./roleUtils"
+import { roles } from "./roleUtils";
 import { getRoleClass } from "./roleUtils";
 
 const Rolebox = ({ Grouprole, setGroupRole }) => {
@@ -8,8 +8,7 @@ const Rolebox = ({ Grouprole, setGroupRole }) => {
   const [deletingIndex, setdeletingIndex] = useState(null);
 
   //* Fetch all role from Roles
-const roleOptions = Object.keys(roles)
-
+  const roleOptions = Object.keys(roles);
 
   const handleAddRole = () => {
     if (role.trim() !== "") {
@@ -17,6 +16,10 @@ const roleOptions = Object.keys(roles)
       setRole("");
     }
   };
+
+  const totalScore = Grouprole.reduce((sum, roleName) => {
+    return sum + (roles[roleName]?.roleValue || 0);
+  }, 0);
 
   const handleDelete = (indextoDel) => {
     setdeletingIndex(indextoDel);
@@ -37,9 +40,9 @@ const roleOptions = Object.keys(roles)
             onChange={(e) => setRole(e.target.value)}
           >
             <option value="">-- Select Role --</option>
-            {roleOptions.map((r, index) => (
-              <option key={index} value={r}>
-                {r}
+            {Object.entries(roles).map(([roleKey, roleData]) => (
+              <option key={roleKey} value={roleKey}>
+                {roleData.roleValue > 0 ? `\u00A0${roleData.roleValue}` : `${roleData.roleValue}`} | {roleKey}
               </option>
             ))}
           </select>

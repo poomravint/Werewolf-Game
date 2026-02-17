@@ -17,10 +17,13 @@ function App() {
 
   return (
     <>
-      <Topicbar/>
+      <Topicbar />
       <div className="Showbox">
         <Namebox Groupname={Groupname} setGroupName={setGroupName} />
-        <Rolebox Grouprole={Grouprole} setGroupRole={setGroupRole} />
+        <Rolebox
+          Grouprole={Grouprole}
+          setGroupRole={setGroupRole}
+        />
       </div>
       <MatchingRandom
         Groupname={Groupname}
@@ -32,7 +35,7 @@ function App() {
         <Showmatching Result={Result} />
       </div>
       <div>
-        <Dmbox result={Result}  showdmbutton={showdmbutton}/>
+        <Dmbox result={Result} showdmbutton={showdmbutton} />
       </div>
     </>
   );
